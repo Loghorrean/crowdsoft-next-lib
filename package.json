@@ -1,6 +1,6 @@
 {
   "name": "crowdsoft-next-lib",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,17 +12,13 @@
   },
   "author": "Loghorrean",
   "license": "ISC",
-  "peerDependencies": {
+  "devDependencies": {
+    "crowdsoft-utils-lib": "^1.1.0",
+    "@types/node": "^18.16.3",
+    "typescript": "^5.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.1"
-  },
-  "dependencies": {
-    "crowdsoft-utils-lib": "^1.0.7"
-  },
-  "devDependencies": {
-    "@types/node": "^18.16.3",
-    "typescript": "^5.0.4"
   }
 }
