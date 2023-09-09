@@ -1,7 +1,7 @@
 "use client";
 
 import { RefObject, useEffect, useRef, useState } from "react";
-import {useEffectOnUpdate} from "@/src";
+import {useEffectOnUpdate} from "./useEffectOnUpdate";
 
 export const useDropdown = (active: boolean, initialHeight = 0): [RefObject<HTMLDivElement>, number] => {
     const contentElement = useRef<HTMLDivElement>(null);

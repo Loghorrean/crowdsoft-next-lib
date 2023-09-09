@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import {useLatest} from "@/src";
+import {useLatest} from "./useLatest";
 
 export function useEvent<T extends (...args: any[]) => any>(fn: T) {
     const fnRef = useLatest(fn);

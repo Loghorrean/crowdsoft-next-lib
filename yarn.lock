@@ -33,10 +33,10 @@
   resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.3.tgz#cef09e3ec9af1d63d2a6cc5b383a737e24e6dcf5"
   integrity sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==
 
-crowdsoft-utils-lib@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/crowdsoft-utils-lib/-/crowdsoft-utils-lib-1.1.0.tgz#7b2736608bbebd742b3e679c5fc8b067ff8f8de3"
-  integrity sha512-LxujFkae0mN4Kk7ay0sMqdsk60/gWwooJIL1Gr7nilF65C85BXxFghPbdLiOfV99r2JGEH4nZ5wh3CF1yMFmeA==
+crowdsoft-utils-lib@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/crowdsoft-utils-lib/-/crowdsoft-utils-lib-1.1.2.tgz#bc7d8f883d37975773fddebd1918988cb727f976"
+  integrity sha512-UXkG9RYmGD8TWbbfaFWtJnoHX5xfdCdsgilpOawPA7DlU/wS1llrlbRr0k3c/dA4kVKq3Dot0yTKB3bSdrBAgA==
 
 csstype@^3.0.2:
   version "3.1.2"
