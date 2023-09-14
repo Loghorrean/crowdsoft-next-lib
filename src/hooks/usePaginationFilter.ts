@@ -1,20 +1,37 @@
 "use client";
 
-import { Dispatch, SetStateAction, useState } from "react";
-import {buildQuery, getQueryObject} from "crowdsoft-utils-lib";
+import {Dispatch, SetStateAction, useEffect, useState} from "react";
+import {useSearchParams} from "next/navigation";
+import {buildQuery, getQueryObject, isValueEmpty} from "crowdsoft-utils-lib";
 
-export function usePaginationFilter<T extends Record<string, any>>(initial?: T): [T, Dispatch<SetStateAction<T>>] {
+type Props<T extends Record<string, any>> = {
+    initial?: T;
+    defaultState?: T;
+}
+
+export function usePaginationFilter<T extends Record<string, any>>({ initial, defaultState }: Props<T> = {}): [T, Dispatch<SetStateAction<T>>] {
+    const params = useSearchParams();
     const [filter, setFilter] = useState<T>(
         initial ??
-            (() => {
-                const query = window.location.href;
-                if (query.indexOf("?") === -1) {
-                    return {} as T;
-                }
-                const queryObj = getQueryObject<{ filter: T }>(query.slice(query.indexOf("?")));
-                return queryObj.filter ?? {} as T;
-            })
+        (() => {
+            const query = params.toString();
+            if (query === "") {
+                return defaultState ?? {} as T;
+            }
+            const queryObj = getQueryObject<{ filter: T }>(`?${query}`);
+            const filter = queryObj.filter;
+            if (isValueEmpty(filter)) {
+                return defaultState ?? {} as T;
+            }
+            if (Object.keys(filter).length === 0) {
+                return defaultState ?? {} as T;
+            }
+            return { ...defaultState, ...queryObj.filter };
+        })
     );
+    useEffect(() => {
+
+    }, []);
     const handleFilter = (newFilter: T | ((prev: T) => T)) => {
         const queryFilter: T = typeof newFilter === "function" ? newFilter(filter) : newFilter;
         window.history.pushState(null, "", `?${buildQuery({ filter: queryFilter })}`);
