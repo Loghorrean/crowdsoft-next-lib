@@ -10,6 +10,7 @@ import {useMountAnimation} from "./useMountAnimation";
 import {useOneTimeAction} from "./useOneTimeAction";
 import {useOneTimeClientNotification} from "./useOneTimeClientNotification";
 import {usePaginationFilter} from "./usePaginationFilter";
+import {usePaginationParameters} from "./usePaginationParameters";
 import {usePrevious} from "./usePrevious";
 import {useSetComplexObject} from "./useSetComplexObject";
 import {useToggle} from "./useToggle";
@@ -27,7 +28,9 @@ export {
     useLatest,
     useMountAnimation,
     useOneTimeAction,
-    useOneTimeClientNotification,usePaginationFilter,
+    useOneTimeClientNotification,
+    usePaginationFilter,
+    usePaginationParameters,
     usePrevious,
     useSetComplexObject,
     useToggle,
