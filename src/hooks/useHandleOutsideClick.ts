@@ -1,6 +1,7 @@
 import { MutableRefObject, useCallback } from "react";
 import {Nullable} from "crowdsoft-utils-lib";
 
+//TODO: ADD TOUCH EVENT
 export const useHandleOutsideClick = (
     callback: (...values: any) => any,
     elem: MutableRefObject<HTMLElement | null>

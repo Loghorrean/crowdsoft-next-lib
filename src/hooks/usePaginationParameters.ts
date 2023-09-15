@@ -22,7 +22,7 @@ const initialConfig: Required<PaginationConfig> = {
     defaultPerPage: 12
 }
 
-export const usePaginationParameters = ({ config, defaultConfig, asSkipLimit }: Props): { page: number; perPage: number } => {
+export const usePaginationParameters = ({ config, defaultConfig, asSkipLimit }: Props = {}): { page: number; perPage: number } => {
     const compiledConfig = useMemo((): Required<PaginationConfig> => {
         return { ...initialConfig, ...defaultConfig, ...config };
     }, [config, defaultConfig]);
