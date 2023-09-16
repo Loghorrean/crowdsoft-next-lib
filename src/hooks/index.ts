@@ -1,6 +1,7 @@
 import {useBodyOverflow} from "./useBodyOverflow";
 import {useDebounce} from "./useDebounce";
 import {useDebounceFn} from "./useDebounceFn";
+import {useDragAndDrop} from "./useDragAndDrop";
 import {useDropdown} from "./useDropdown";
 import {useEvent} from "./useEvent";
 import {useEffectOnUpdate} from "./useEffectOnUpdate";
@@ -21,6 +22,7 @@ export {
     useBodyOverflow,
     useDebounce,
     useDebounceFn,
+    useDragAndDrop,
     useDropdown,
     useEvent,
     useEffectOnUpdate,
