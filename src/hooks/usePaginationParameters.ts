@@ -12,7 +12,6 @@ export type PaginationConfig = {
 type Props = {
     config?: PaginationConfig;
     defaultConfig?: Required<PaginationConfig>;
-    asLimitOffset?: boolean;
 }
 
 const initialConfig: Required<PaginationConfig> = {
@@ -22,7 +21,7 @@ const initialConfig: Required<PaginationConfig> = {
     defaultPerPage: 12
 }
 
-export const usePaginationParameters = ({ config, defaultConfig, asLimitOffset }: Props = {}): { page: number; perPage: number } => {
+export const usePaginationParameters = ({ config, defaultConfig }: Props = {}): { page: number; perPage: number; offset: number } => {
     const compiledConfig = useMemo((): Required<PaginationConfig> => {
         return { ...initialConfig, ...defaultConfig, ...config };
     }, [config, defaultConfig]);
@@ -39,7 +38,8 @@ export const usePaginationParameters = ({ config, defaultConfig, asLimitOffset }
         : compiledConfig.defaultPerPage;
 
     return {
-        page: asLimitOffset ? (validatedPage - 1) * validatedPerPage : validatedPage,
+        page: validatedPage,
         perPage: validatedPerPage,
+        offset: (validatedPage - 1) * validatedPerPage
     };
 };
