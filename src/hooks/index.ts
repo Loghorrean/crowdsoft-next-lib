@@ -13,6 +13,7 @@ import {useOneTimeClientNotification} from "./useOneTimeClientNotification";
 import {usePaginationFilter} from "./usePaginationFilter";
 import {usePaginationParameters} from "./usePaginationParameters";
 import {usePrevious} from "./usePrevious";
+import {useReadFileContents} from "./useReadFileContents";
 import {useSetComplexObject} from "./useSetComplexObject";
 import {useToggle} from "./useToggle";
 import {useWindowEvent} from "./useWindowEvent";
@@ -34,6 +35,7 @@ export {
     usePaginationFilter,
     usePaginationParameters,
     usePrevious,
+    useReadFileContents,
     useSetComplexObject,
     useToggle,
     useWindowEvent,

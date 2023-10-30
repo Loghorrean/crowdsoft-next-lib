@@ -1,8 +1,9 @@
 "use client";
 
 import { SyntheticEvent, useCallback, useState } from "react";
+import * as React from "react";
 
-export const useDragAndDrop = (onDrop: (...args: any) => unknown) => {
+export function useDragAndDrop<T = Element>(onDrop: (...args: any) => unknown) {
     const [dragActive, setDragActive] = useState(false);
     const handleDrag = useCallback((event: SyntheticEvent) => {
         event.preventDefault();
@@ -14,7 +15,7 @@ export const useDragAndDrop = (onDrop: (...args: any) => unknown) => {
         }
     }, []);
 
-    const handleDrop = useCallback(async (event: DragEvent) => {
+    const handleDrop = useCallback(async (event: React.DragEvent<T>) => {
         event.preventDefault();
         event.stopPropagation();
         setDragActive(false);
