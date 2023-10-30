@@ -14,16 +14,11 @@ export const useDragAndDrop = (onDrop: (...args: any) => unknown) => {
         }
     }, []);
 
-    //TODO: CHANGE TYPE
-    const handleDrop = useCallback(async (event: any) => {
-        console.log(typeof event);
+    const handleDrop = useCallback(async (event: DragEvent) => {
         event.preventDefault();
         event.stopPropagation();
         setDragActive(false);
         onDrop(event);
-        // if (event.dataTransfer?.files && event.dataTransfer.files[0]) {
-        //     await handleUpload(event.dataTransfer.files);
-        // }
     }, []);
 
     return {
